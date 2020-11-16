@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://s2.ax1x.com/2020/02/19/3VdMwj.jpg">
+  <link rel="icon" type="image/png" href="https://s2.ax1x.com/2020/02/19/3VdMwj.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="AnJiaJun">
+  <meta name="author" content="AnJiaJun">
+  <meta name="keywords" content="">
+  <title>HTML5+CSS学习笔记 - AnJiaJun&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"anjiajun39.github.io","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>AnJiaJun's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/08/18/duYdGq.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="HTML5+CSS学习笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-09-13 11:14" pubdate>
+        2020年9月13日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">HTML5+CSS学习笔记</h1>
+            
+            <div class="markdown-body">
+              <p>本人零基础学习HTML5+CSS过程中的笔记<br><a id="more"></a></p>
+<h2 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h2><h3 id="HTML文件结构"><a href="#HTML文件结构" class="headerlink" title="HTML文件结构"></a>HTML文件结构</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>文件标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+文件正文
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre></div>
+<h3 id="body元素的属性"><a href="#body元素的属性" class="headerlink" title="body元素的属性"></a>body元素的属性</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">text</td>
+<td style="text-align:center">设定页面文字的颜色</td>
+</tr>
+<tr>
+<td style="text-align:center">bgcolor</td>
+<td style="text-align:center">设定页面背景的颜色</td>
+</tr>
+<tr>
+<td style="text-align:center">background</td>
+<td style="text-align:center">设定页面背景图像</td>
+</tr>
+<tr>
+<td style="text-align:center">bgproperties</td>
+<td style="text-align:center">设定页面的背景图像为固定状态，不随页面的滚动而滚动</td>
+</tr>
+<tr>
+<td style="text-align:center">link</td>
+<td style="text-align:center">设定页面默认的链接颜色</td>
+</tr>
+<tr>
+<td style="text-align:center">alink</td>
+<td style="text-align:center">设定鼠标正在单击时的链接颜色</td>
+</tr>
+<tr>
+<td style="text-align:center">vlink</td>
+<td style="text-align:center">设定访问过后的链接颜色</td>
+</tr>
+<tr>
+<td style="text-align:center">topmargin</td>
+<td style="text-align:center">设定页面的上边距</td>
+</tr>
+<tr>
+<td style="text-align:center">leftmargin</td>
+<td style="text-align:center">设定页面的左边距</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="HTML文件中注释的种类"><a href="#HTML文件中注释的种类" class="headerlink" title="HTML文件中注释的种类"></a>HTML文件中注释的种类</h3><p>1.在文件开始标记\<html>\</html>中的注释语法为：</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--注释的文字--&gt;</span></code></pre></div>
+<p>2.在CSS层叠样式表中的页面注释语法为：</p>
+<div class="hljs"><pre><code class="hljs css"><span class="hljs-comment">/*注释的文字*/</span></code></pre></div>
+<p>3.在JavaScript脚本语言中注释分为单行注释和多行注释</p>
+<p>单行注释的语法为：</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">//注释的文字</span></code></pre></div>
+<p>多行注释的语法为：</p>
+<div class="hljs"><pre><code class="hljs javascript"><span class="hljs-comment">/*注释的文字*/</span></code></pre></div>
+<h3 id="topmargin属性和margin-top属性的区别"><a href="#topmargin属性和margin-top属性的区别" class="headerlink" title="topmargin属性和margin-top属性的区别"></a>topmargin属性和margin-top属性的区别</h3><p>topmargin属性和margin-top属性都表示上边距，topmargin属性是页面主体标记\<body>的一个属性，表示元素与浏览器顶部的距离，写在\<body>标记内：而margin-top属性是CSS属性，表示当前元素距离相邻元素或者与其父元素的顶部的距离</p>
+<h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><h4 id="标题的对齐方式"><a href="#标题的对齐方式" class="headerlink" title="标题的对齐方式"></a>标题的对齐方式</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;对齐方式&quot;</span>&gt;</span>文本内容<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></code></pre></div>
+<p>有left,center,right三种对齐方式</p>
+<h3 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h3><h4 id="文字的斜体、下划线、删除线"><a href="#文字的斜体、下划线、删除线" class="headerlink" title="文字的斜体、下划线、删除线"></a>文字的斜体、下划线、删除线</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>斜体内容<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>带下划线的文字<span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">strike</span>&gt;</span>带删除线的文字<span class="hljs-tag">&lt;/<span class="hljs-name">strike</span>&gt;</span></code></pre></div>
+<h4 id="文字的上标与下标"><a href="#文字的上标与下标" class="headerlink" title="文字的上标与下标"></a>文字的上标与下标</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>上标标记内容<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">sub</span>&gt;</span>下标标记内容<span class="hljs-tag">&lt;/<span class="hljs-name">sub</span>&gt;</span></code></pre></div>
+<h4 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特殊符号</th>
+<th style="text-align:center">实体名称</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">‘’</td>
+<td style="text-align:center">\&quot;</td>
+<td style="text-align:center">引号</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">\&lt;</td>
+<td style="text-align:center">左尖括号</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">\&gt;</td>
+<td style="text-align:center">右尖括号</td>
+</tr>
+<tr>
+<td style="text-align:center">×</td>
+<td style="text-align:center">\&times;</td>
+<td style="text-align:center">乘号</td>
+</tr>
+<tr>
+<td style="text-align:center">©</td>
+<td style="text-align:center">\&copy;</td>
+<td style="text-align:center">版权符号</td>
+</tr>
+<tr>
+<td style="text-align:center">（空格）</td>
+<td style="text-align:center">\&nbsp;</td>
+<td style="text-align:center">空格占位符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><h4 id="段落标记"><a href="#段落标记" class="headerlink" title="段落标记"></a>段落标记</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">P</span>&gt;</span>段落文字<span class="hljs-tag">&lt;/<span class="hljs-name">P</span>&gt;</span></code></pre></div>
+<h4 id="段落的换行标记"><a href="#段落的换行标记" class="headerlink" title="段落的换行标记"></a>段落的换行标记</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+一段文字<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>一段文字
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div>
+<p>其中，\<br>标记代表换行，如果需要多次换行，可以连续使用多个换行标记</p>
+<h4 id="段落的原格式标记"><a href="#段落的原格式标记" class="headerlink" title="段落的原格式标记"></a>段落的原格式标记</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>
+文本内容
+<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span></code></pre></div>
+<h3 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h3><h4 id="水平线标记"><a href="#水平线标记" class="headerlink" title="水平线标记"></a>水平线标记</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span></code></pre></div>
+<h4 id="水平线标记的宽度"><a href="#水平线标记的宽度" class="headerlink" title="水平线标记的宽度"></a>水平线标记的宽度</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;水平线宽度&quot;</span>&gt;</span>
+//示例
+<span class="hljs-comment">&lt;!--设置水平线的宽度，居右--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;120&quot;</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span></code></pre></div>
+<p>在该语法中，水平线的宽度值可以是确定的宽度值，也可以是窗口宽度值的百分比</p>
+<h2 id="图像与超链接"><a href="#图像与超链接" class="headerlink" title="图像与超链接"></a>图像与超链接</h2><h3 id="添加图像"><a href="#添加图像" class="headerlink" title="添加图像"></a>添加图像</h3><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像文件的地址&quot;</span>&gt;</span></code></pre></div>
+<p>src用来设置图像文件所在的地址，这一路径可以使相对地址，也可以是绝对地址</p>
+<p>相对地址的使用方法为：</p>
+<ul>
+<li>如果要引用的文件位于该文件的同一目录下，则只需输入要链接文件的名称，如5-1.jpg</li>
+<li>如果要引用的文件位于该文件的下一级目录中，只需先输入目录名，然后加“/”，再输入文件名，如mr/5-2.jpg</li>
+<li>如果要引用的文件位于该文件的上一级目录中，则先输入“../”，再输入目录名、文件名，如../mr/5-2.jpg</li>
+</ul>
+<h3 id="设置图像属性"><a href="#设置图像属性" class="headerlink" title="设置图像属性"></a>设置图像属性</h3><h4 id="调整图像大小"><a href="#调整图像大小" class="headerlink" title="调整图像大小"></a>调整图像大小</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像文件的地址&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span></code></pre></div>
+<ul>
+<li>height:用于设置图像的高度，单位是像素，可以忽略</li>
+<li>width:用于设置图像的宽度，单位是像素，可以忽略</li>
+</ul>
+<h4 id="设置图像边框——border"><a href="#设置图像边框——border" class="headerlink" title="设置图像边框——border"></a>设置图像边框——border</h4><p>在默认情况下，页面中插入的图像是没有边框的，但是可以通过border属性为图像添加边框</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像文件的地址&quot;</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span></code></pre></div>
+<p>其中，border用于设置图片边框的大小，单位是像素</p>
+<h4 id="图像间距与对齐方式"><a href="#图像间距与对齐方式" class="headerlink" title="图像间距与对齐方式"></a>图像间距与对齐方式</h4><ol>
+<li>调整图像间距</li>
+</ol>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像地址&quot;</span> <span class="hljs-attr">hspace</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">vspace</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span></code></pre></div>
+<ul>
+<li>hspace:用于设置图像的水平间距，单位是像素，可以忽略</li>
+<li>vspace:用于设置图像的垂直间距，单位是像素，可以忽略</li>
+</ul>
+<ol>
+<li>设置图像相对于文字基准线的对齐方式</li>
+</ol>
+<p>图像和文字之间的排列通过align参数来调整。其对齐方式可分为两类，即绝对对齐方式和相对文字对齐方式，绝对对齐方式包括左对齐、右对齐和居中对齐三种，而相对文字对齐方式则是指图像与一行文字的相对位置。</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像地址&quot;</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;相对文字的对齐方式&quot;</span>&gt;</span></code></pre></div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">align取值</th>
+<th style="text-align:center">表示的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">top</td>
+<td style="text-align:center">把图像的顶部和同行的最高部分对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">middle</td>
+<td style="text-align:center">把图像的中部和行的中部对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">bottom</td>
+<td style="text-align:center">把图像的底部和同行文本的底部对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">texttop</td>
+<td style="text-align:center">把图像的顶部和同行中最高文本的顶部对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">absmiddle</td>
+<td style="text-align:center">把图像的中部和同行中最大项的中部对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">baseline</td>
+<td style="text-align:center">把图像的底部和文本的基线对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">absbottom</td>
+<td style="text-align:center">把图像的底部和同行中的最低项对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">left</td>
+<td style="text-align:center">使图像和左边界对齐（文本环绕图像）</td>
+</tr>
+<tr>
+<td style="text-align:center">right</td>
+<td style="text-align:center">使图像和右边界对齐（文本环绕图像）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="替换文本与提示文字"><a href="#替换文本与提示文字" class="headerlink" title="替换文本与提示文字"></a>替换文本与提示文字</h4><ol>
+<li>添加图像的提示文字——-title</li>
+</ol>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像文件的地址&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span></code></pre></div>
+<ol>
+<li>添加图像的替换文字——-alt</li>
+</ol>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像文件的地址&quot;</span> <span class="hljs-attr">alt</span>+&quot;&quot;&gt;</span></code></pre></div>
+<h3 id="链接标记"><a href="#链接标记" class="headerlink" title="链接标记"></a>链接标记</h3><h4 id="文本链接"><a href="#文本链接" class="headerlink" title="文本链接"></a>文本链接</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>链接文字<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></div>
+<ul>
+<li>href:链接地址，是Hypertext Reference的缩写</li>
+<li>target:打开新窗口的方式，主要有以下4个属性值:<ul>
+<li>_black:新建一个窗口打开</li>
+<li>_parent:在上一级窗口打开，常在分帧的框架页面中使用</li>
+<li>_self:在同一窗口打开，默认值</li>
+<li>_top:在浏览器的整个窗口打开，将会忽略所有的框架结构</li>
+</ul>
+</li>
+</ul>
+<h3 id="图像的超链接"><a href="#图像的超链接" class="headerlink" title="图像的超链接"></a>图像的超链接</h3><h4 id="图像的超链接-1"><a href="#图像的超链接-1" class="headerlink" title="图像的超链接"></a>图像的超链接</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;链接地址&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;目标窗口的打开方式&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像文件的链接地址&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></div>
+<p>在该语法中，href参数用来设置图像的链接地址，而在图像属性中可以添加图像的其他参数，如height、border、hspace等</p>
+<h4 id="图像热区链接"><a href="#图像热区链接" class="headerlink" title="图像热区链接"></a>图像热区链接</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;图像地址&quot;</span> <span class="hljs-attr">usemap</span>=<span class="hljs-string">&quot;映射图像名称&quot;</span>&gt;</span></code></pre></div>
+<p>然后需要定义热区图像以及热区的链接，语法格式如下：</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">map</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;映射图像的名称&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">area</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">&quot;热区形状&quot;</span> <span class="hljs-attr">coords</span>=<span class="hljs-string">&quot;热区坐标&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;链接地址&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">map</span>&gt;</span></code></pre></div>
+<p>在该语法中，要先定义映射的图像名称，然后再引用这个映射图像。在\<area>标记中定义了热区的位置和链接，其中shape用来定义热区形状，可以取值为<strong>rect(矩形区域)</strong>、<strong>circle(圆形区域)</strong>以及<strong>poly(多边形区域)</strong>；coords参数则用来设置区域坐标，对于不同形状来说，coords设置的方式也不同：</p>
+<ul>
+<li>矩形区域rect：coords包含4个参数，分别为left、top、right和bottom，也可以将这4个参数看作矩形两个对角的点坐标</li>
+<li>圆形区域circle：coords包含3个参数，分别为center-x、center-y、和tadius，也可以将这3个参数看作是圆形的圆心坐标(x,y)与半径的值</li>
+<li>多边形区域poly：coords参数需要按照顺序(可以是逆时针，也可以是顺时针)取各点的x,y坐标值。由于定义坐标比较复杂而且难以控制，一般情况下都使用可视化软件进行这种参数的设置</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/HTML5/">HTML5</a>
+                    
+                      <a class="hover-with-bg" href="/tags/CSS/">CSS</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/c0a84437.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Markdown 常用数学符号</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/22982.html">
+                        <span class="hidden-mobile">使用Hexo + GitHub Pages 搭建博客</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
