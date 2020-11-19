@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>如何使用Git</title>
+    <link href="/posts/ab8e450c.html"/>
+    <url>/posts/ab8e450c.html</url>
+    
+    <content type="html"><![CDATA[<p>本文记录本人学习Git相关操作</p><a id="more"></a><p>教程来源于<a href="https://oschina.gitee.io/learn-git-branching/">https://oschina.gitee.io/learn-git-branching/</a><br>想学习git基本命令的小伙伴可以去找个网站，有图形树便于理解。</p><h3 id="提交记录"><a href="#提交记录" class="headerlink" title="提交记录"></a>提交记录</h3><pre><code class="hljs shell">git commit</code></pre><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><pre><code class="hljs shell">git branch &lt;分支名&gt;</code></pre><h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><pre><code class="hljs shell">git checkout &lt;分支名&gt;</code></pre><p>可使用以下命令直接<strong>创建并切换</strong>分支<br><pre><code class="hljs shell">git checkout -b &lt;分支名&gt;</code></pre></p><h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><p>该命令使&lt;分支名&gt;合并至当前所在分支<br><pre><code class="hljs shell">git merge &lt;分支名&gt;</code></pre><br>例如将master分支合并到bugfix<br><pre><code class="hljs shell">git checkout bugfixgit merge master</code></pre></p><h3 id="Git-rebase"><a href="#Git-rebase" class="headerlink" title="Git rebase"></a>Git rebase</h3><p>该命令把&lt;分支名&gt;直接移至当前分支<br>假设当前在bugfix分支<br><pre><code class="hljs shell">git rebase master</code></pre><br>这时master分支还没有更新，我们再切换回master分支，把它rebase到bugfix分支上<br><pre><code class="hljs shell">git rebase bugfix</code></pre></p><h3 id="在提交树上移动"><a href="#在提交树上移动" class="headerlink" title="在提交树上移动"></a>在提交树上移动</h3><pre><code class="hljs shell">git checkout cx</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>工具</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hexo-abbrlink生成唯一永久文章链接</title>
     <link href="/posts/553fb3c9.html"/>
     <url>/posts/553fb3c9.html</url>
