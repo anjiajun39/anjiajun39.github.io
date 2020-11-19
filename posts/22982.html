@@ -29,7 +29,15 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.staticfile.org/prism/1.22.0/themes/prism-tomorrow.min.css" />
+      
+      
     
   
 
@@ -228,7 +236,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年11月17日 下午
+                  本文最后更新于：2020年11月19日 晚上
                 
               </p>
             
@@ -263,18 +271,14 @@
 <h2 id="安装配置Hexo"><a href="#安装配置Hexo" class="headerlink" title="安装配置Hexo"></a>安装配置Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <p>强烈建议你花20分钟区读一读 Hexo 的官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
 <p><img src="https://s1.ax1x.com/2020/08/19/d1yXM8.png" srcset="/img/loading.gif" alt=""></p>
-<p><strong>使用npm安装Hexo</strong>：在命令行输入：</p>
-<div class="hljs"><pre><code>npm install hexo-cli -g
-</code></pre></div><p>安装完成后，查看Hexo的版本：</p>
-<div class="hljs"><pre><code>hexo version
-</code></pre></div><p>若能正常看到版本号，之后执行下列命令来初始化 Hexo，用户名改成你的，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<div class="hljs"><pre><code>---
+<p><strong>使用npm安装Hexo</strong>：在命令行输入：<br><pre class="language-none"><code class="language-none">npm install hexo-cli -g</code></pre></p>
+<p>安装完成后，查看Hexo的版本：<br><pre class="language-none"><code class="language-none">hexo version</code></pre><br>若能正常看到版本号，之后执行下列命令来初始化 Hexo，用户名改成你的，Hexo 将会在指定文件夹中新建所需要的文件。<br><pre class="language-none"><code class="language-none">---
 hexo init 
 anjiajun39.github.io cd 
 anjiajun39.github.io npm install
----
-</code></pre></div><p>新建完成后，指定文件夹的目录如下：</p>
-<div class="hljs"><pre><code>├── .deploy         #需要部署的文件
+---</code></pre></p>
+<p>新建完成后，指定文件夹的目录如下：</p>
+<pre><code>├── .deploy         #需要部署的文件
 ├── node_modules    #Hexo插件
 ├── public          #生成的静态网页文件
 ├── scaffolds       #模板
@@ -284,68 +288,59 @@ anjiajun39.github.io npm install
 ├── themes          #主题
 ├── _config.yml     #全局配置文件
 └── package.json    #npm 依赖等
-</code></pre></div><p><strong>运行本地Hexo服务</strong></p>
-<div class="hljs"><pre><code>hexo server
+</code></pre><p><strong>运行本地Hexo服务</strong><br><pre class="language-none"><code class="language-none">hexo server
 或者
-hexo s
-</code></pre></div><p>您的网站会在 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 下启动。如果可以正常访问，则说明Hexo本地博客已经搭建起来了，只是本地哦，别人看不到的。下面，我们要部署到Github。</p>
+hexo s</code></pre></p>
+<p>您的网站会在 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 下启动。如果可以正常访问，则说明Hexo本地博客已经搭建起来了，只是本地哦，别人看不到的。下面，我们要部署到Github。</p>
 <p><img src="https://s1.ax1x.com/2020/08/19/d3FLE6.png" srcset="/img/loading.gif" alt=""></p>
 <p><strong>注意1</strong>：执行hexo server提示找不到该指令</p>
-<p>解决办法：在Hexo 3.0 后server被单独出来了，需要安装server，安装的命令如下：</p>
-<div class="hljs"><pre><code>sudo npm install hexo-server
+<p>解决办法：在Hexo 3.0 后server被单独出来了，需要安装server，安装的命令如下：<br><pre class="language-none"><code class="language-none">sudo npm install hexo-server
 或者
-npm install hexo -server --save
-</code></pre></div><h2 id="关联Hexo与GitHub-Pages"><a href="#关联Hexo与GitHub-Pages" class="headerlink" title="关联Hexo与GitHub Pages"></a>关联Hexo与GitHub Pages</h2><p>我们如何让本地git项目与远程的github建立联系呢？用 SSH keys</p>
+npm install hexo -server --save</code></pre></p>
+<h2 id="关联Hexo与GitHub-Pages"><a href="#关联Hexo与GitHub-Pages" class="headerlink" title="关联Hexo与GitHub Pages"></a>关联Hexo与GitHub Pages</h2><p>我们如何让本地git项目与远程的github建立联系呢？用 SSH keys</p>
 <p><strong>生成SSH keys</strong></p>
-<p>输入你注册GitHub时的邮箱地址</p>
-<div class="hljs"><pre><code>ssh-keygen -t rsa -C &quot;youremail@xx.com&quot;
-</code></pre></div><p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入，我们按回车不设置密码。</p>
+<p>输入你注册GitHub时的邮箱地址<br><pre class="language-none"><code class="language-none">ssh-keygen -t rsa -C &quot;youremail@xx.com&quot;</code></pre></p>
+<p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入，我们按回车不设置密码。</p>
 <p><strong>添加 SSH Key 到 GitHub</strong></p>
 <p>打开 <code>C:\Users\用户\.ssh\id_rsa.pub</code>，此文件里面内容为刚才生成的密钥，准确的复制这个文件的内容，粘贴到 <a target="_blank" rel="noopener" href="https://github.com/settings/ssh">https://github.com/settings/ssh</a> 的 <code>new SSH key</code> 中</p>
 <p><strong>测试</strong></p>
-<p>可以输入下面的命令，看看设置是否成功，git@github.com 的部分不要修改：</p>
-<div class="hljs"><pre><code>ssh -T git@github.com
-</code></pre></div><p>如果是下面的反馈：</p>
-<div class="hljs"><pre><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.
+<p>可以输入下面的命令，看看设置是否成功，git@github.com 的部分不要修改：<br><pre class="language-none"><code class="language-none">ssh -T git@github.com</code></pre></p>
+<p>如果是下面的反馈：<br><pre class="language-none"><code class="language-none">The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.
 RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-Are you sure you want to continue connecting (yes/no)?
-</code></pre></div><p>不要紧张，输入yes就好，然后会看到：</p>
-<div class="hljs"><pre><code class="hljs ada">Hi Anjiajun! You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.</code></pre></div>
+Are you sure you want to continue connecting (yes&#x2F;no)?</code></pre></p>
+<p>不要紧张，输入yes就好，然后会看到：</p>
+<pre class="language-none"><code class="language-none">Hi Anjiajun! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></pre>
 <p><strong>配置Git个人信息</strong></p>
-<p>现在你已经可以通过 SSH 链接到 GitHub 了，还有一些个人信息需要完善的。<br> Git 会根据用户的名字和邮箱来记录提交。GitHub 也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的。</p>
-<div class="hljs"><pre><code>git config --global user.name &quot;anjiajun39&quot;
-git config --global user.email &quot;anjiajun39@qq.com&quot;
-</code></pre></div><p><strong>配置 Deployment</strong></p>
+<p>现在你已经可以通过 SSH 链接到 GitHub 了，还有一些个人信息需要完善的。<br> Git 会根据用户的名字和邮箱来记录提交。GitHub 也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的。<br><pre class="language-none"><code class="language-none">git config --global user.name &quot;anjiajun39&quot;
+git config --global user.email &quot;anjiajun39@qq.com&quot;</code></pre></p>
+<p><strong>配置 Deployment</strong></p>
 <p>在根目录的<code>_config.yml</code>文件中，找到<code>Deployment</code>，然后按照如下修改，用户名改成你的：</p>
 <p>需要注意的是：冒号后面记得空一格！</p>
-<div class="hljs"><pre><code># Deployment
+<pre><code># Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: git@github.com:anjiajun39/anjiajun39.github.io.git
   branch: master
-</code></pre></div><p><strong>本地文件提交到 GitHub Pages</strong></p>
-<div class="hljs"><pre><code>// 删除旧的 public 文件
+</code></pre><p><strong>本地文件提交到 GitHub Pages</strong><br><pre class="language-none"><code class="language-none">&#x2F;&#x2F; 删除旧的 public 文件
 hexo clean
-
-// 生成新的 public 文件
+	
+&#x2F;&#x2F; 生成新的 public 文件
 hexo generate
 或者
 hexo g
-
-// 开始部署
+	
+&#x2F;&#x2F; 开始部署
 hexo deploye
 或者
-hexo d
-</code></pre></div><p>在浏览器中输入 <a href="https://anjiajun39.github.io">https://anjiajun39.github.io</a> （用户名改成你的）看到了 Hexo 与 GitHub Pages 已经成功关联了。</p>
-<p><u><strong>注意1</strong></u>：若<code>hexo d</code>操作失败，则需要提前安装一个扩展：</p>
-<div class="hljs"><pre><code>npm install hexo-deployer-git --save
-</code></pre></div><p><u><strong>注意2</strong></u>：如果在执行 <code>hexo d</code> 后,出现 <code>error deployer not found:github</code> 的错误（如下），则是因为没有设置好 public key 所致，重新详细设置即可。</p>
-<div class="hljs"><pre><code>Permission denied (publickey).
+hexo d</code></pre></p>
+<p>在浏览器中输入 <a href="https://anjiajun39.github.io">https://anjiajun39.github.io</a> （用户名改成你的）看到了 Hexo 与 GitHub Pages 已经成功关联了。</p>
+<p><u><strong>注意1</strong></u>：若<code>hexo d</code>操作失败，则需要提前安装一个扩展：<br><pre class="language-none"><code class="language-none">npm install hexo-deployer-git --save</code></pre></p>
+<p><u><strong>注意2</strong></u>：如果在执行 <code>hexo d</code> 后,出现 <code>error deployer not found:github</code> 的错误（如下），则是因为没有设置好 public key 所致，重新详细设置即可。<br><pre class="language-none"><code class="language-none">Permission denied (publickey).
 fatal: Could not read from remote repository.
 Please make sure you have the correct access rights
-and the repository exists.
-</code></pre></div><p><u><strong>注意3</strong></u>：怎么避免 .md 文件被解析？</p>
+and the repository exists.</code></pre></p>
+<p><u><strong>注意3</strong></u>：怎么避免 .md 文件被解析？</p>
 <p>Hexo原理就是hexo在执行hexo generate时会在本地先把博客生成的一套静态站点放到public文件夹中，在执行hexo deploy时将其复制到.deploy文件夹中。Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了 README. md，它也会在你下一次部署时被删去。怎么解决呢？</p>
 <p>在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。</p>
 <h2 id="GitHub-Pages地址解析到个人域名"><a href="#GitHub-Pages地址解析到个人域名" class="headerlink" title="GitHub Pages地址解析到个人域名"></a>GitHub Pages地址解析到个人域名</h2><blockquote>
@@ -353,8 +348,8 @@ and the repository exists.
 </blockquote>
 <p>进行该绑定过程，其实就是一个重定向的过程。</p>
 <p>在 GitHub 仓库的根目录下建立一个 <code>CNAME</code> 的文本文件(注意：没有扩展名)，文件里面只能输入一个你的域名，不能加<code>http://</code></p>
-<div class="hljs"><pre><code>www.anjiajun.cn
-</code></pre></div><p>注意：CNAME 一定是在你 Github 项目的 master 根目录下</p>
+<pre class="language-none"><code class="language-none">www.anjiajun.cn</code></pre>
+<p>注意：CNAME 一定是在你 Github 项目的 master 根目录下</p>
 <p>进入<a target="_blank" rel="noopener" href="https://dc.aliyun.com/tcparse/dns.htm">阿里云域名解析地址</a>，添加解析：</p>
 <ol>
 <li>记录类型选择<code>CNAME</code></li>
@@ -372,30 +367,24 @@ and the repository exists.
 <p>方法一：每次 <code>hexo d</code> 之后，就去 GitHub 仓库根目录新建 CNAME文件</p>
 <p>方法二：在 <code>hexo g</code> 之后， <code>hexo d</code> 之前，把CNAME文件复制到 “\public” 目录下面，里面写入你要绑定的域名。</p>
 <p>方法三（推荐）：将需要上传至github的内容放在source文件夹，例如CNAME、favicon.ico、images等，这样在 hexo d 之后就不会被删除了。</p>
-<h2 id="Hexo常用操作"><a href="#Hexo常用操作" class="headerlink" title="Hexo常用操作"></a>Hexo常用操作</h2><h3 id="发表一篇文章"><a href="#发表一篇文章" class="headerlink" title="发表一篇文章"></a>发表一篇文章</h3><div class="hljs"><pre><code>hexo new &quot;文章标题&quot;
-</code></pre></div><p>在本地博客文件夹 <code>source\_posts</code> 文件夹下看到我们新建的 markdown 文件。</p>
+<h2 id="Hexo常用操作"><a href="#Hexo常用操作" class="headerlink" title="Hexo常用操作"></a>Hexo常用操作</h2><h3 id="发表一篇文章"><a href="#发表一篇文章" class="headerlink" title="发表一篇文章"></a>发表一篇文章</h3><pre class="language-none"><code class="language-none">hexo new &quot;文章标题&quot;</code></pre>
+<p>在本地博客文件夹 <code>source\_posts</code> 文件夹下看到我们新建的 markdown 文件。</p>
 <p>当然，我们也可以手动添加Markdown文件在source-&gt;_deploy文件夹下，其效果同样可以媲美<code>hexo new</code></p>
-<p>文章编辑好之后，运行生成、部署命令：    </p>
-<div class="hljs"><pre><code>hexo clean
-
+<p>文章编辑好之后，运行生成、部署命令：<br><pre class="language-none"><code class="language-none">hexo clean
 hexo g
-
-hexo d
-</code></pre></div><p>当然你也可以执行下面的命令，相当于上面两条命令的效果</p>
-<div class="hljs"><pre><code>hexo clean
-
-hexo d -g
-</code></pre></div><h3 id="新建一个自定义页面"><a href="#新建一个自定义页面" class="headerlink" title="新建一个自定义页面"></a>新建一个自定义页面</h3><div class="hljs"><pre><code>hexo new page folder
-</code></pre></div><h3 id="文章如何添加多个标签"><a href="#文章如何添加多个标签" class="headerlink" title="文章如何添加多个标签"></a>文章如何添加多个标签</h3><p>有两种多标签格式</p>
-<div class="hljs"><pre><code>tags: [a, b, c]
+hexo d</code></pre></p>
+<p>当然你也可以执行下面的命令，相当于上面两条命令的效果<br><pre class="language-none"><code class="language-none">hexo clean
+hexo d -g</code></pre></p>
+<h3 id="新建一个自定义页面"><a href="#新建一个自定义页面" class="headerlink" title="新建一个自定义页面"></a>新建一个自定义页面</h3><pre class="language-none"><code class="language-none">hexo new page folder</code></pre>
+<h3 id="文章如何添加多个标签"><a href="#文章如何添加多个标签" class="headerlink" title="文章如何添加多个标签"></a>文章如何添加多个标签</h3><p>有两种多标签格式<br><pre class="language-none"><code class="language-none">tags: [a, b, c]
 或
 tags:
-　- a
-　- b
-　- c
-</code></pre></div><h3 id="显示部分文章内容"><a href="#显示部分文章内容" class="headerlink" title="显示部分文章内容"></a>显示部分文章内容</h3><p>如果在博客文章列表中，不想全文显示，可以增加 ``, 后面的内容就不会显示在列表。</p>
-<div class="hljs"><pre><code>&lt;!--more--&gt;
-</code></pre></div><h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2><p>官方主题库：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+	- a
+	- b
+	- c</code></pre></p>
+<h3 id="显示部分文章内容"><a href="#显示部分文章内容" class="headerlink" title="显示部分文章内容"></a>显示部分文章内容</h3><p>如果在博客文章列表中，不想全文显示，可以增加 ``, 后面的内容就不会显示在列表。</p>
+<pre class="language-none"><code class="language-none">&lt;!--more--&gt;</code></pre>
+<h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2><p>官方主题库：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
 <p>或在GitHub中下载主题文件夹，放置在博客的themes文件夹下，再把根目录的_config文件中的theme后主题名改为所需要修改的主题名。</p>
 <p>具体操作详见主题文档。</p>
 
@@ -605,6 +594,8 @@ tags:
 
 
 
+  
+    
   
 
 

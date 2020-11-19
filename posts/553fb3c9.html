@@ -29,7 +29,15 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.staticfile.org/prism/1.22.0/themes/prism-tomorrow.min.css" />
+      
+      
     
   
 
@@ -234,15 +242,15 @@
             
             <div class="markdown-body">
               <p>Hexo在打开文章之后，不少中文内容在地址栏会显示为乱码，为了使得网址美观，找到了这个插件，可以生成一段特征码使简洁。<br><a id="more"></a></p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><div class="hljs"><pre><code class="hljs js">npm install hexo-abbrlink --save</code></pre></div>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><pre class="language-js" data-language="js"><code class="language-js">npm install hexo<span class="token operator">-</span>abbrlink <span class="token operator">--</span>save</code></pre>
 <blockquote>
 <p>执行此命令可能会不成功，提示你缺少相应的依赖<br> 比如<code>babel-eslint</code>、<code>mini-css-extract-plugin</code>、<code>webpack-cli</code>…<br> 使用npm命令安装即可，比如<code>npm install eslint@4.x babel-eslint@8 --save-dev</code></p>
 </blockquote>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>修改根目录站点配置文件<code>config.yml</code>，改为：</p>
-<div class="hljs"><pre><code class="hljs js">permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink
-abbrlink:
-    alg: crc32   #算法： crc16(default) and crc32
-    rep: hex     #进制： dec(default) and hex</code></pre></div>
+<pre class="language-js" data-language="js"><code class="language-js">permalink<span class="token operator">:</span> posts<span class="token operator">/</span><span class="token operator">:</span>abbrlink<span class="token punctuation">.</span>html  # 此处可以自己设置，也可以直接使用 <span class="token operator">:</span><span class="token operator">/</span>abbrlink
+abbrlink<span class="token operator">:</span>
+    alg<span class="token operator">:</span> crc32   #算法： <span class="token function">crc16</span><span class="token punctuation">(</span><span class="token keyword">default</span><span class="token punctuation">)</span> and crc32
+    rep<span class="token operator">:</span> hex     #进制： <span class="token function">dec</span><span class="token punctuation">(</span><span class="token keyword">default</span><span class="token punctuation">)</span> and hex</code></pre>
 <p>生成完后，原<code>md</code>文件的Front-matter 内会增加<code>abbrlink</code> 字段，值为生成的ID 。这个字段确保了在我们修改了Front-matter 内的博客标题title或创建日期date字段之后而不会改变链接地址。</p>
 
             </div>
@@ -451,6 +459,8 @@ abbrlink:
 
 
 
+  
+    
   
 
 
