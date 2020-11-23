@@ -17,9 +17,33 @@
   <meta name="description" content="AnJiaJun">
   <meta name="author" content="AnJiaJun">
   <meta name="keywords" content="">
-  <title>分类 - AnJiaJun&#39;s Blog</title>
+  <title>在 Windows 10 中安装 WSL2 的 Linux 子系统 - AnJiaJun&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.staticfile.org/prism/1.22.0/themes/prism-tomorrow.min.css" />
+      
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +71,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -141,14 +165,51 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://s3.ax1x.com/2020/11/17/DZiQ78.jpg') no-repeat center center;
+         style="background: url('https://s1.ax1x.com/2020/08/18/duYdGq.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分类">
+            <span class="h2" id="subtitle" title="在 Windows 10 中安装 WSL2 的 Linux 子系统">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-21 16:20" pubdate>
+        2020年11月21日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      514 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -161,241 +222,144 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">在 Windows 10 中安装 WSL2 的 Linux 子系统</h1>
+            
+              <p class="note note-info">
                 
-
-
-
-
-
-
-
-<div class="category-list">
-  
-  
-  
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckhuhwz3u000hngnvbrjt5gw7" role="tab" data-toggle="collapse" href="#collapse-ckhuhwz3u000hngnvbrjt5gw7"
-        aria-expanded="false"
-      >
-        Hexo
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/Hexo/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>5</span>
-      </a>
-      <div class="category-collapse">
-        
-          
-  <div id="collapse-ckhuhwz3u000hngnvbrjt5gw7" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckhuhwz3u000hngnvbrjt5gw7">
-    
-    
-    
-      
-      
-        <a href="/posts/553fb3c9.html" class="list-group-item list-group-item-action">
-          <span class="category-post">Hexo-abbrlink生成唯一永久文章链接</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/c0a84437.html" class="list-group-item list-group-item-action">
-          <span class="category-post">Markdown 常用数学符号</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/22982.html" class="list-group-item list-group-item-action">
-          <span class="category-post">使用Hexo + GitHub Pages 搭建博客</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/17851.html" class="list-group-item list-group-item-action">
-          <span class="category-post">博客新开张</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/4a17b156.html" class="list-group-item list-group-item-action">
-          <span class="category-post">Hello World</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckhuhwz3f0004ngnv2z1z9hh3" role="tab" data-toggle="collapse" href="#collapse-ckhuhwz3f0004ngnv2z1z9hh3"
-        aria-expanded="false"
-      >
-        后端
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse">
-        
-          
-  <div id="collapse-ckhuhwz3f0004ngnv2z1z9hh3" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckhuhwz3f0004ngnv2z1z9hh3">
-    
-    
-    
-      
-      
-        <a href="/posts/df79b88b.html" class="list-group-item list-group-item-action">
-          <span class="category-post">C语言笔记</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckhuhwz3f000bngnvacg7e9x4" role="tab" data-toggle="collapse" href="#collapse-ckhuhwz3f000bngnvacg7e9x4"
-        aria-expanded="false"
-      >
-        前端
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse">
-        
-          
-  <div id="collapse-ckhuhwz3f000bngnvacg7e9x4" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckhuhwz3f000bngnvacg7e9x4">
-    
-    
-    
-      
-      
-        <a href="/posts/14761ca4.html" class="list-group-item list-group-item-action">
-          <span class="category-post">HTML5+CSS学习笔记</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckhuhwz3u000ungnv1ogzc93d" role="tab" data-toggle="collapse" href="#collapse-ckhuhwz3u000ungnv1ogzc93d"
-        aria-expanded="false"
-      >
-        工具
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse">
-        
-          
-  <div id="collapse-ckhuhwz3u000ungnv1ogzc93d" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckhuhwz3u000ungnv1ogzc93d">
-    
-    
-    
-      
-      
-        <a href="/posts/ab8e450c.html" class="list-group-item list-group-item-action">
-          <span class="category-post">如何使用Git</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    <div class="category row">
-      <a
-        class="category-item collapsed list-group-item category-item-action col-10 col-md-11"
-        id="heading-ckhuhwz4a001angnv8sobc58s" role="tab" data-toggle="collapse" href="#collapse-ckhuhwz4a001angnv8sobc58s"
-        aria-expanded="false"
-      >
-        Linux
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      <a href="/categories/Linux/" class="category-count col-2 col-md-1">
-        <i class="iconfont icon-articles"></i>
-        <span>1</span>
-      </a>
-      <div class="category-collapse">
-        
-          
-  <div id="collapse-ckhuhwz4a001angnv8sobc58s" class="collapse in" role="tabpanel"
-       aria-labelledby="heading-ckhuhwz4a001angnv8sobc58s">
-    
-    
-    
-      
-      
-        <a href="/posts/102c6e63.html" class="list-group-item list-group-item-action">
-          <span class="category-post">在 Windows 10 中安装 WSL2 的 Linux 子系统</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-</div>
-
-              </div>
+                  本文最后更新于：2020年11月23日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>本文介绍如何在 Windows 10 中安装 WSL2 的 Linux 子系统</p>
+<a id="more"></a>
+<h2 id="启用虚拟机"><a href="#启用虚拟机" class="headerlink" title="启用虚拟机"></a>启用虚拟机</h2><p>以管理员权限启动 PowerShell，然后输入以下命令启用虚拟机平台：<br><pre class="language-shell" data-language="shell"><code class="language-shell">Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform</code></pre></p>
+<p>以管理员权限启动 PowerShell，然后输入以下命令启用 Linux 子系统功能：<br><pre class="language-shell" data-language="shell"><code class="language-shell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></pre></p>
+<p>在以上每一步命令执行完之后，PowerShell 中可能会提示你重新启动计算机。按“Y”可以重新启动。</p>
+<h2 id="安装一个Linus发行版"><a href="#安装一个Linus发行版" class="headerlink" title="安装一个Linus发行版"></a>安装一个Linus发行版</h2><p>打开微软商店应用，在搜索框中输入“Linux”然后搜索，你可以看到搜索结果中有很多的 Linux 发行版可以选择。选择一个你喜欢的 Linux 发行版本然后安装：</p>
+<p>需要注意，在商店中的安装并没有实际上完成 Linux 子系统的安装，你还需要运行一次已安装的 Linux 发行版以执行真正的安装操作。</p>
+<h2 id="启用WSL2"><a href="#启用WSL2" class="headerlink" title="启用WSL2"></a>启用WSL2</h2><p>重要：<strong>你的操作系统版本必须至少大于或等于 Windows 10.0.18917 ！</strong></p>
+<p>使用 wsl -l 可以列出当前系统上已经安装的 Linux 子系统名称。注意这里的 -l 是列表“list”的缩写，是字母 l 不是其他字符。</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">wsl -l</code></pre>
+<p>如果提示 wsl 不是内部或外部命令，说明你没有启用“适用于 Windows 的 Linux 子系统”，请先完成本文第一步。</p>
+<p>如果提示没有发现任何已安装的 Linux，说明你没有安装 Linux 发行版，或者只是去商店下载了，没有运行它执行真正的安装，请先完成本文第二步。</p>
+<p>使用<code>wsl --set-version &lt;Distro&gt; 2</code>命令可以设置一个 Linux 发行版的 WSL 版本。命令中 <code>&lt;Distro&gt;</code> 替换为你安装的 Linux 发型版本的名称，也就是前面通过 <code>wsl -l</code> 查询到的名称。</p>
+<p>我安装了Ubuntu发行版</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">wsl --set-version Ubuntu 2</code></pre>
+<p>当然，使用以下命令可以在以后安装 Linux 的时候默认启用 WSL2：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">wsl --set-default-version 2</code></pre>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/df79b88b.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C语言笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/ab8e450c.html">
+                        <span class="hidden-mobile">如何使用Git</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "2Yvsw1WqGOukOvW94i0op7NQ-gzGzoHsz",
+          app_key: "5qsOSASHlwWvvRqybP4h067J",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -494,6 +458,8 @@
 
   
     
+      <script  src="/js/lazyload.js" ></script>
+    
   
 
 
@@ -504,9 +470,15 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
 
 
 

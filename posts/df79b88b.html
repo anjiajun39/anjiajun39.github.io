@@ -17,7 +17,7 @@
   <meta name="description" content="AnJiaJun">
   <meta name="author" content="AnJiaJun">
   <meta name="keywords" content="">
-  <title>如何使用Git - AnJiaJun&#39;s Blog</title>
+  <title>C语言笔记 - AnJiaJun&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -170,7 +170,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="如何使用Git">
+            <span class="h2" id="subtitle" title="C语言笔记">
               
             </span>
 
@@ -180,8 +180,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-11-19 19:51" pubdate>
-        2020年11月19日 晚上
+      <time datetime="2020-11-23 15:48" pubdate>
+        2020年11月23日 下午
       </time>
     </span>
   
@@ -192,7 +192,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      943 字
     </span>
   
 
@@ -202,7 +202,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13
+      10
        分钟
     </span>
   
@@ -232,49 +232,99 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">如何使用Git</h1>
+            <h1 style="display: none">C语言笔记</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年11月21日 上午
+                  本文最后更新于：2020年11月23日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <p>本文记录本人学习Git相关操作</p>
-<a id="more"></a>
-<p>教程来源于<a target="_blank" rel="noopener" href="https://oschina.gitee.io/learn-git-branching/">https://oschina.gitee.io/learn-git-branching/</a><br>想学习git基本命令的小伙伴可以去找个网站，有图形树便于理解。</p>
-<h3 id="提交记录"><a href="#提交记录" class="headerlink" title="提交记录"></a>提交记录</h3><pre class="language-shell" data-language="shell"><code class="language-shell">git commit</code></pre>
-<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><pre class="language-shell" data-language="shell"><code class="language-shell">git branch &lt;分支名&gt;</code></pre>
-<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><pre class="language-shell" data-language="shell"><code class="language-shell">git checkout &lt;分支名&gt;</code></pre>
-<p>可使用以下命令直接<strong>创建并切换</strong>分支<br><pre class="language-shell" data-language="shell"><code class="language-shell">git checkout -b &lt;分支名&gt;</code></pre></p>
-<h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><p>该命令使&lt;分支名&gt;合并至当前所在分支<br><pre class="language-shell" data-language="shell"><code class="language-shell">git merge &lt;分支名&gt;</code></pre><br>例如将master分支合并到bugfix<br><pre class="language-shell" data-language="shell"><code class="language-shell">git checkout bugfix
-git merge master</code></pre></p>
-<h3 id="Git-rebase"><a href="#Git-rebase" class="headerlink" title="Git rebase"></a>Git rebase</h3><p>该命令把&lt;分支名&gt;直接移至当前分支<br>假设当前在bugfix分支<br><pre class="language-shell" data-language="shell"><code class="language-shell">git rebase master</code></pre><br>这时master分支还没有更新，我们再切换回master分支，把它rebase到bugfix分支上<br><pre class="language-shell" data-language="shell"><code class="language-shell">git rebase bugfix</code></pre></p>
-<h3 id="在提交树上移动-分离head"><a href="#在提交树上移动-分离head" class="headerlink" title="在提交树上移动,分离head"></a>在提交树上移动,分离head</h3><p>该命令使head指向cx分支，可使用哈希值<br><pre class="language-shell" data-language="shell"><code class="language-shell">git checkout cx</code></pre></p>
-<h3 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h3><p>首先看看操作符 (^)。把这个符号加在引用名称的后面，表示让 Git 寻找指定提交记录的父提交。<br>所以 ‘master^’ 相当于“’master’的父节点”。<br>‘master^^’是’master’的第二个父节点<br>现在咱们切换到’master’的父节点<br><pre class="language-shell" data-language="shell"><code class="language-shell">git checkout master^</code></pre></p>
-<h3 id="“-”操作符"><a href="#“-”操作符" class="headerlink" title="“~”操作符"></a>“~”操作符</h3><p>如果你想在提交树中向上移动很多步的话，敲那么多 ^ 貌似也挺烦人的，Git 当然也考虑到了这一点，于是又引入了操作符 ~。<br>该操作符后面可以跟一个数字（可选，不跟数字时与 ^ 相同，向上移动一次），指定向上移动多少次。<br>使用’~’一次后退四步<br><pre class="language-shell" data-language="shell"><code class="language-shell">git checkout HEAD~4</code></pre><br><strong>强制修改分支位置</strong><br>直接使用 -f 选项让分支指向另一个提交。例如:<br><pre class="language-shell" data-language="shell"><code class="language-shell">git branch -f master HEAD~3</code></pre><br>上面的命令会将 master 分支强制指向 HEAD 的第 3 级父提交。</p>
-<h3 id="撤销变更"><a href="#撤销变更" class="headerlink" title="撤销变更"></a>撤销变更</h3><p><strong>Git Reset</strong><br>git reset 通过把分支记录回退几个提交记录来实现撤销改动。你可以将这想象成“改写历史”。git reset 向上移动分支，原来指向的提交记录就跟从来没有提交过一样。<br><pre class="language-shell" data-language="shell"><code class="language-shell">git reset HEAD~1</code></pre><br>Git 把 master 分支移回到 C1；现在我们的本地代码库根本就不知道有 C2 这个提交了。<br>（注：在reset后， C2 所做的变更还在，但是处于未加入暂存区状态。）</p>
-<p><strong>Git Revert</strong><br>虽然在你的本地分支中使用 git reset 很方便，但是这种“改写历史”的方法对大家一起使用的远程分支是无效的哦！<br>为了撤销更改并分享给别人，我们需要使用 git revert<br><pre class="language-shell" data-language="shell"><code class="language-shell">git revert HEAD</code></pre><br>本质上这是新提交记录了 C2’ 引入了更改 —— 这些更改刚好是用来撤销 C2 这个提交的。也就是说 C2’ 的状态与 C1 是相同的。<br>revert 之后就可以把你的更改推送到远程仓库与别人分享啦。</p>
-<h3 id="Git-Cherry-pick"><a href="#Git-Cherry-pick" class="headerlink" title="Git  Cherry-pick"></a>Git  Cherry-pick</h3><pre class="language-shell" data-language="shell"><code class="language-shell">git cherry-pick c2 c4</code></pre>
-<h3 id="交互式的rebase"><a href="#交互式的rebase" class="headerlink" title="交互式的rebase"></a>交互式的rebase</h3><p>交互式 rebase 指的是使用带参数 <code>--interactive</code> 的 rebase 命令, 简写为 <code>-i</code></p>
-<p>如果你在命令后增加了这个选项, Git 会打开一个 UI 界面并列出将要被复制到目标分支的备选提交记录，它还会显示每个提交记录的哈希值和提交说明，提交说明有助于你理解这个提交进行了哪些更改。</p>
-<p>当 rebase UI界面打开时, 你能做3件事:</p>
-<ul>
-<li>调整提交记录的顺序（通过鼠标拖放来完成）</li>
-<li>删除你不想要的提交（通过切换 <code>pick</code> 的状态来完成，关闭就意味着你不想要这个提交记录）</li>
-<li>合并提交。 遗憾的是由于某种逻辑的原因，我们的课程不支持此功能，因此我不会详细介绍这个操作。简而言之，它允许你把多个提交记录合并成一个。</li>
+              <p>C Primer Plus 笔记<br><a id="more"></a></p>
+<h2 id="初识C语言"><a href="#初识C语言" class="headerlink" title="初识C语言"></a>初识C语言</h2><h3 id="选择C语言的理由"><a href="#选择C语言的理由" class="headerlink" title="选择C语言的理由"></a>选择C语言的理由</h3><ol>
+<li>设计特性</li>
+<li>高效性</li>
+<li>可移植性</li>
+<li>强大而灵活</li>
+<li>面向程序员</li>
+</ol>
+<h3 id="语言标准"><a href="#语言标准" class="headerlink" title="语言标准"></a>语言标准</h3><ul>
+<li>C89或C90</li>
+<li>C99</li>
+<li>C11</li>
 </ul>
-<pre class="language-shell" data-language="shell"><code class="language-shell">git rebase -i HEAD~4</code></pre>
-<h3 id="本地栈式提交"><a href="#本地栈式提交" class="headerlink" title="本地栈式提交"></a>本地栈式提交</h3><p>来看一个在开发中经常会遇到的情况：我正在解决某个特别棘手的 Bug，为了便于调试而在代码中添加了一些调试命令并向控制台打印了一些信息。</p>
-<p>这些调试和打印语句都在它们各自的提交记录里。最后我终于找到了造成这个 Bug 的根本原因，解决掉以后觉得沾沾自喜！</p>
-<p>最后就差把 <code>bugFix</code> 分支里的工作合并回 <code>master</code> 分支了。你可以选择通过 fast-forward 快速合并到 <code>master</code> 分支上，但这样的话 <code>master</code> 分支就会包含我这些调试语句了。你肯定不想这样，应该还有更好的方式……</p>
-<p>实际我们只要让 Git 复制解决问题的那一个提交记录就可以了。跟之前我们在“整理提交记录”中学到的一样，我们可以使用</p>
-<ul>
-<li><code>git rebase -i</code></li>
-<li><code>git cherry-pick</code></li>
+<h3 id="使用C语言的7个步骤"><a href="#使用C语言的7个步骤" class="headerlink" title="使用C语言的7个步骤"></a>使用C语言的7个步骤</h3><ol>
+<li>定义程序的目标</li>
+<li>设计程序</li>
+<li>编写代码</li>
+<li>编译</li>
+<li>运行程序</li>
+<li>测试和调试程序</li>
+<li>维护和修改程序</li>
+</ol>
+<h3 id="编程机制"><a href="#编程机制" class="headerlink" title="编程机制"></a>编程机制</h3><p>源代码——&gt;编译器——&gt;目标代码——&gt;链接器——&gt;可执行代码</p>
+<h2 id="C语言概述"><a href="#C语言概述" class="headerlink" title="C语言概述"></a>C语言概述</h2><h3 id="程序细节"><a href="#程序细节" class="headerlink" title="程序细节"></a>程序细节</h3><ol>
+<li><p><code>#include</code>指令和头文件</p>
+ <pre class="language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">incude</span><span class="token expression"><span class="token operator">&lt;</span>stdio<span class="token punctuation">.</span>h<span class="token operator">></span></span></span></code></pre>
+<p> 这行代码是一条C预处理指令(preprocessor directive)。通常，C编译器在编译前会对源代码做一些准备工作，即预处理(preprocessing)。<br> <code>stdio.h</code><br> 该文件中包含了供编译器使用的输入和输出函数信息。该文件名的含义使<em>标准输入/输出头文件</em>。在C程序顶部的信息集合被称为<em>头文件(header)</em></p>
+</li>
+<li><p><code>main()</code>函数</p>
+ <pre class="language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span></code></pre>
+<p> C程序一定从main()函数开始执行。</p>
+</li>
+<li><p>注释</p>
+ <pre class="language-c" data-language="c"><code class="language-c"><span class="token comment">/*一个简单的程序*/</span></code></pre>
+<p> 单行注释可使用这样</p>
+ <pre class="language-c" data-language="c"><code class="language-c"><span class="token comment">// 这种注释只能写一行</span></code></pre>
+</li>
+<li><p>花括号、函数体和块</p>
+ <pre class="language-c" data-language="c"><code class="language-c"><span class="token punctuation">&#123;</span>
+    ···
+<span class="token punctuation">&#125;</span></code></pre>
+<p> 所有的C函数都是用花括号标记函数体的开始和结束。这是规定，不能省略。</p>
+</li>
+<li><p>声明</p>
+ <pre class="language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> num<span class="token punctuation">;</span></code></pre>
+<p> 这行代码叫做声明。声明是C语言最重要的特性之一。</p>
+<p> 命名：可以用小写字母、大写字母、数字和下划线(_)来命名。而且，名称的第1个字符必须是字母或下划线，<strong>不能是数字</strong>。</p>
+</li>
+<li><p>赋值</p>
+ <pre class="language-c" data-language="c"><code class="language-c">num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p><code>printf()</code>函数</p>
+ <pre class="language-c" data-language="c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I am a simple"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p><code>return</code>语句</p>
+ <pre class="language-c" data-language="c"><code class="language-c">ruturn <span class="token number">0</span>；</code></pre>
+<p> return语句是最后一条语句。int main(void)中的int表明main()函数应返回一个整数。C标准要求main()这样做。</p>
+</li>
+</ol>
+<h2 id="数据和C"><a href="#数据和C" class="headerlink" title="数据和C"></a>数据和C</h2><h3 id="数据：数据类型关键字"><a href="#数据：数据类型关键字" class="headerlink" title="数据：数据类型关键字"></a>数据：数据类型关键字</h3><p>C语言的数据类型关键字：<br><code>int</code> <code>long</code> <code>short</code> <code>unsigned</code> <code>char</code> <code>float</code> <code>double</code> <code>signed</code> <code>void</code> <code>_Bool</code> <code>_Complex</code> <code>_Imaginary</code></p>
+<p><code>int</code>表示基本的整数类型</p>
+<p><code>long、short、unsigned、signed</code>用于提供整数类型的变式，例如<code>unsigned short int</code>和<code>long long int</code></p>
+<p><code>char</code>用于指定字母和其他字符(如，#、$、%、*)。另外，也可以表示较小的整数</p>
+<p><code>float、double和long double</code>表示带小数点的数</p>
+<p><code>_Bool</code>类型表示布尔值</p>
+<p><code>_Complex和_Imaginary</code>分别表示复数和虚数</p>
+<h4 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h4><p>没有小数部分的数</p>
+<h4 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h4><p>和数学中实数的概念差不多</p>
+<h3 id="C语言基本数据类型"><a href="#C语言基本数据类型" class="headerlink" title="C语言基本数据类型"></a>C语言基本数据类型</h3><h4 id="int类型"><a href="#int类型" class="headerlink" title="int类型"></a>int类型</h4><p>int类型是有符号整型，必须是整数。</p>
+<h5 id="8进制和16进制"><a href="#8进制和16进制" class="headerlink" title="8进制和16进制"></a>8进制和16进制</h5><p>0x或0X前缀表示16进制值<br>0前缀表示8进制</p>
+<h5 id="显示8进制和16进制"><a href="#显示8进制和16进制" class="headerlink" title="显示8进制和16进制"></a>显示8进制和16进制</h5><p>十进制显示<code>%d</code><br>八进制显示<code>%o</code><br>十六进制显示<code>%x</code></p>
+<h4 id="其他整数类型"><a href="#其他整数类型" class="headerlink" title="其他整数类型"></a>其他整数类型</h4><ul>
+<li><p>short int类型(简写为short)占用的存储空间可能比int类型少，常用于较小数值的场合以节省空间。与int类似，short是有符号类型。</p>
+</li>
+<li><p>long int或long占用的存储空间可能比int多，适用于较大数值的场合。与int类似，long是有符号类型。</p>
+</li>
+<li><p>long long int或long long占用的存储空间可能比long多，适用于更大数值的场合。该类型至少占64位。有符号类型。</p>
+</li>
+<li><p>unsigned int或unsigned只用于非负值的场合。这种类型与有符号类型表示的范围不同，由于表示正负号的位现在用于表示另一个二进制位，所以无符号整型可以表示更大的数。</p>
+</li>
+<li><p>在任何有符号类型前面添加关键字signed，可强调使用有符号类型的意图。</p>
+</li>
 </ul>
-<p>来达到目的。</p>
+<h5 id="使用多种整数类型的原因"><a href="#使用多种整数类型的原因" class="headerlink" title="使用多种整数类型的原因"></a>使用多种整数类型的原因</h5><p>在个人计算机上常见的设置是:long long占64位，long占32位，short占16位，int占16位或32位(依计算机的自然字长而定)</p>
 
             </div>
             <hr>
@@ -284,7 +334,7 @@ git merge master</code></pre></p>
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+                      <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
                     
                   </div>
                 
@@ -292,7 +342,7 @@ git merge master</code></pre></p>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Git/">Git</a>
+                      <a class="hover-with-bg" href="/tags/C/">C</a>
                     
                   </div>
                 
@@ -305,18 +355,12 @@ git merge master</code></pre></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/102c6e63.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">在 Windows 10 中安装 WSL2 的 Linux 子系统</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/553fb3c9.html">
-                        <span class="hidden-mobile">Hexo-abbrlink生成唯一永久文章链接</span>
+                      <a href="/posts/102c6e63.html">
+                        <span class="hidden-mobile">在 Windows 10 中安装 WSL2 的 Linux 子系统</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
