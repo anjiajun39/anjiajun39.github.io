@@ -236,7 +236,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年11月26日 晚上
+                  本文最后更新于：2020年11月27日 下午
                 
               </p>
             
@@ -324,8 +324,13 @@
 <li><p>在任何有符号类型前面添加关键字<code>signed</code>，可强调使用有符号类型的意图。</p>
 </li>
 </ul>
-<h5 id="使用多种整数类型的原因"><a href="#使用多种整数类型的原因" class="headerlink" title="使用多种整数类型的原因"></a>使用多种整数类型的原因</h5><p>在个人计算机上常见的设置是:<code>long long</code>占64位，<code>long</code>占32位，<code>short</code>占16位，<code>int</code>占16位或32位(依计算机的自然字长而定)<br><code>int</code>类型那么多，应该如何选择？首先，考虑<code>unsigned</code>类型。这种类型的数常用于计数，因为计数不用负数。而且，<code>unsigned</code>类型可以表示更大的正数。</p>
-<h5 id="打印short、long、long-long、unsigned类型"><a href="#打印short、long、long-long、unsigned类型" class="headerlink" title="打印short、long、long long、unsigned类型"></a>打印<code>short</code>、<code>long</code>、<code>long long</code>、<code>unsigned</code>类型</h5><p>打印<code>unsigned int</code>类型的值，使用<code>%u</code>转换说明<br>打印<code>long</code>类型的值，使用<code>%ld</code>转换说明<br>如果系统中<code>int</code>和<code>long</code>的大小相同，使用<code>%d</code>就行<br>在x和o前面可以使用1前缀，<code>%lx</code>表示以十六进制格式打印<code>long</code>类型整数，<code>%lo</code>表示以八进制格式打印<code>long</code>类型整数。<br><strong>注意，虽然C允许使用大写或小写的常量后缀，但是在转换说明中只能用小写</strong></p>
+<h5 id="使用多种整数类型的原因"><a href="#使用多种整数类型的原因" class="headerlink" title="使用多种整数类型的原因"></a>使用多种整数类型的原因</h5><p>在个人计算机上常见的设置是:<code>long long</code>占64位，<code>long</code>占32位，<code>short</code>占16位，<code>int</code>占16位或32位(依计算机的自然字长而定)</p>
+<p><code>int</code>类型那么多，应该如何选择？首先，考虑<code>unsigned</code>类型。这种类型的数常用于计数，因为计数不用负数。而且，<code>unsigned</code>类型可以表示更大的正数。</p>
+<h5 id="打印short、long、long-long、unsigned类型"><a href="#打印short、long、long-long、unsigned类型" class="headerlink" title="打印short、long、long long、unsigned类型"></a>打印<code>short</code>、<code>long</code>、<code>long long</code>、<code>unsigned</code>类型</h5><p>打印<code>unsigned int</code>类型的值，使用<code>%u</code>转换说明</p>
+<p>打印<code>long</code>类型的值，使用<code>%ld</code>转换说明</p>
+<p>如果系统中<code>int</code>和<code>long</code>的大小相同，使用<code>%d</code>就行</p>
+<p>在x和o前面可以使用l前缀，<code>%lx</code>表示以十六进制格式打印<code>long</code>类型整数，<code>%lo</code>表示以八进制格式打印<code>long</code>类型整数。</p>
+<p><strong>注意，虽然C允许使用大写或小写的常量后缀，但是在转换说明中只能用小写</strong></p>
 
             </div>
             <hr>
