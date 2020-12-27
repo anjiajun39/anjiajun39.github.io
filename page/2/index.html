@@ -17,7 +17,7 @@
   <meta name="description" content="AnJiaJun">
   <meta name="author" content="AnJiaJun">
   <meta name="keywords" content="">
-  <title>归档 - AnJiaJun&#39;s Blog</title>
+  <title>AnJiaJun&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -47,7 +47,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -141,18 +141,22 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://s3.ax1x.com/2020/11/17/DZiDNF.jpg') no-repeat center center;
+         style="background: url('https://s3.ax1x.com/2020/11/17/DZiM0f.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="[明镜止水]">
               
             </span>
 
             
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -163,42 +167,81 @@
     
       <div class="container nopadding-md">
         <div class="py-5" id="board"
-          >
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 11 篇文章</p>
-  <hr>
-  
-  
+
+  <div class="row mx-auto index-card">
     
-      
-      <p class="h5">2020</p>
     
-    <a href="/posts/553fb3c9.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hexo-abbrlink生成唯一永久文章链接</span>
-      <time style="float: right;">09-24</time>
-    </a>
-  
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/4a17b156.html" target="_self">
+          <img src="https://s3.ax1x.com/2020/11/17/DVzSyT.png" alt="Hello World">
+        </a>
+      </div>
     
-    <a href="/posts/c0a84437.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Markdown 常用数学符号</span>
-      <time style="float: right;">09-18</time>
-    </a>
-  
-    
-    <a href="/posts/14761ca4.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HTML5+CSS学习笔记</span>
-      <time style="float: right;">09-13</time>
-    </a>
-  
-</div>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/4a17b156.html">Hello World</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/posts/4a17b156.html">
+          
+          
+            
+          
+          欢迎来到我的新博客
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-02-17 23:52" pubdate>
+              2020-02-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Hexo/">Hexo</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
