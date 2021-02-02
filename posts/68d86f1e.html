@@ -17,7 +17,7 @@
   <meta name="description" content="AnJiaJun">
   <meta name="author" content="AnJiaJun">
   <meta name="keywords" content="">
-  <title>Ubuntu搭建shadowsocks - AnJiaJun&#39;s Blog</title>
+  <title>查看操作系统类型大小 - AnJiaJun&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -170,7 +170,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Ubuntu搭建shadowsocks">
+            <span class="h2" id="subtitle" title="查看操作系统类型大小">
               
             </span>
 
@@ -180,8 +180,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-27 11:19" pubdate>
-        2020年12月27日 上午
+      <time datetime="2021-02-01 16:46" pubdate>
+        2021年2月1日 下午
       </time>
     </span>
   
@@ -192,7 +192,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      303 字
+      114 字
     </span>
   
 
@@ -202,7 +202,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      2
        分钟
     </span>
   
@@ -232,44 +232,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Ubuntu搭建shadowsocks</h1>
+            <h1 style="display: none">查看操作系统类型大小</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年1月1日 上午
+                  本文最后更新于：2021年2月2日 下午
                 
               </p>
             
             <div class="markdown-body">
-              <p>校园网流量不够用，发现走v6流量不计费，于是搭了一个服务器使上网流量走v6 to v4，将搭建过程记录下来。</p>
-<a id="more"></a>
-<h2 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h2><p>找一个能开ipv6的厂家，我选择的vultr，就是有点小贵。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里选择的使ubuntu18.04</p>
-<h3 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a>安装pip</h3><pre class="language-shell" data-language="shell"><code class="language-shell">sudo apt install python3-pip</code></pre>
-<h3 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h3><p>执行<br><pre class="language-shell" data-language="shell"><code class="language-shell">pip3 install https:&#x2F;&#x2F;github.com&#x2F;shadowsocks&#x2F;shadowsocks&#x2F;archive&#x2F;master.zip</code></pre></p>
-<p>安装完后检查是否为3.0.0版本<br><pre class="language-shell" data-language="shell"><code class="language-shell">ssserver --version</code></pre></p>
-<p>若显示Shadowsocks 3.0.0则进行下一步</p>
-<h2 id="配置Shadowsocks"><a href="#配置Shadowsocks" class="headerlink" title="配置Shadowsocks"></a>配置Shadowsocks</h2><h3 id="创建shadowsocks-json"><a href="#创建shadowsocks-json" class="headerlink" title="创建shadowsocks.json"></a>创建shadowsocks.json</h3><pre class="language-shell" data-language="shell"><code class="language-shell">sudo vim &#x2F;etc&#x2F;shadowsocks.json</code></pre>
-<h3 id="编辑内容"><a href="#编辑内容" class="headerlink" title="编辑内容"></a>编辑内容</h3><pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token property">"server"</span><span class="token operator">:</span><span class="token string">"::"</span><span class="token punctuation">,</span>  <span class="token comment">//这里开启了ipv6</span>
-    <span class="token property">"server_port"</span><span class="token operator">:</span>你的端口号<span class="token punctuation">,</span>
-    <span class="token property">"local_address"</span><span class="token operator">:</span> <span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"local_port"</span><span class="token operator">:</span><span class="token number">1080</span><span class="token punctuation">,</span>
-    <span class="token property">"password"</span><span class="token operator">:</span><span class="token string">"连接密码"</span><span class="token punctuation">,</span>
-    <span class="token property">"timeout"</span><span class="token operator">:</span><span class="token number">600</span><span class="token punctuation">,</span>
-    <span class="token property">"method"</span><span class="token operator">:</span><span class="token string">"chacha-ietf-poly1305"</span><span class="token punctuation">,</span>
-    <span class="token property">"fast_open"</span><span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token property">"prefer_ipv6"</span><span class="token operator">:</span><span class="token boolean">true</span>
-<span class="token punctuation">&#125;</span></code></pre>
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><pre class="language-shell" data-language="shell"><code class="language-shell">ssserver -c &#x2F;etc&#x2F;shadowsocks.json -d start</code></pre>
-<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><p>如果要使用 salsa20 或 chacha20 或 chacha20-ietf 算法，需要安装 libsodium ，否则就算在config.json里面设置成chacha20也会提示method not supported.</p>
-<p>依此执行以下命令安装libsodium</p>
-<pre class="language-shell" data-language="shell"><code class="language-shell">apt-get install build-essential
-wget https:&#x2F;&#x2F;github.com&#x2F;jedisct1&#x2F;libsodium&#x2F;releases&#x2F;download&#x2F;1.0.11&#x2F;libsodium-1.0.11.tar.gz
-tar xf libsodium-1.0.11.tar.gz &amp;&amp; cd libsodium-1.0.11
-.&#x2F;configure &amp;&amp; make -j2 &amp;&amp; make install
-ldconfig</code></pre>
+              <p>使用C语言查看当前系统的指定类型的大小<br><a id="more"></a></p>
+<pre class="language-c" data-language="c"><code class="language-c"><span class="token comment">/*typesize.c --  打印类型大小 */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type int has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type char has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type long has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type long long has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type double has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type long double has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
             </div>
             <hr>
             <div>
@@ -278,7 +264,7 @@ ldconfig</code></pre>
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a>
+                      <a class="hover-with-bg" href="/categories/C/">C</a>
                     
                   </div>
                 
@@ -286,7 +272,7 @@ ldconfig</code></pre>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Shadowsocks/">Shadowsocks</a>
+                      <a class="hover-with-bg" href="/tags/C/">C</a>
                     
                   </div>
                 
@@ -299,18 +285,12 @@ ldconfig</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/68d86f1e.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">查看操作系统类型大小</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/66ca42c.html">
-                        <span class="hidden-mobile">matlab基础使用</span>
+                      <a href="/posts/1c66cb73.html">
+                        <span class="hidden-mobile">Ubuntu搭建shadowsocks</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

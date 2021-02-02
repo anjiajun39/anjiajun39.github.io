@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>查看操作系统类型大小</title>
+    <link href="/posts/68d86f1e.html"/>
+    <url>/posts/68d86f1e.html</url>
+    
+    <content type="html"><![CDATA[<p>使用C语言查看当前系统的指定类型的大小<br><a id="more"></a></p><pre class="language-c" data-language="c"><code class="language-c"><span class="token comment">/*typesize.c --  打印类型大小 */</span><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type int has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type char has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type long has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type long long has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type double has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Type long double has a size of %zd bytes.\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span></code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>C</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Ubuntu搭建shadowsocks</title>
     <link href="/posts/1c66cb73.html"/>
     <url>/posts/1c66cb73.html</url>
