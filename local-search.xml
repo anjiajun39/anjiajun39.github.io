@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>git入门</title>
+    <link href="/posts/c8c37a7.html"/>
+    <url>/posts/c8c37a7.html</url>
+    
+    <content type="html"><![CDATA[<p>Git使用基本指令</p><a id="more"></a><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="设置姓名和邮箱地址"><a href="#设置姓名和邮箱地址" class="headerlink" title="设置姓名和邮箱地址"></a>设置姓名和邮箱地址</h3><pre class="language-none"><code class="language-none">git config --global user.name &quot;Firstname Lastname&quot;git config --global user.email &quot;your_email@example.com&quot;</code></pre><h3 id="提高命令输出的可读性"><a href="#提高命令输出的可读性" class="headerlink" title="提高命令输出的可读性"></a>提高命令输出的可读性</h3><p>将color.ui设置为auto可以让命令的输出拥有更高的可读性</p><pre class="language-none"><code class="language-none">git config --global color.ui auto</code></pre><p>“~/.gitconfig”中会增加下面一行</p><pre class="language-none"><code class="language-none">[color]  ui &#x3D; auto</code></pre><p>这样一来，各种命令的输出就会变得更容易分辨</p><h3 id="设置SSH-Key"><a href="#设置SSH-Key" class="headerlink" title="设置SSH Key"></a>设置SSH Key</h3><p>运行下面的命令创建SSH Key</p><pre class="language-none"><code class="language-none">ssh-keygen -t rsa -C &quot;your_email@examole.com&quot;</code></pre><p>id_rsa文件是私有密钥，id_rsa.pub是公开密钥</p><p><strong>添加 SSH Key 到 GitHub</strong></p><p>在Windows中，打开 <code>C:\Users\用户\.ssh\id_rsa.pub</code>，此文件里面内容为刚才生成的密钥，准确的复制这个文件的内容，粘贴到 <a href="https://github.com/settings/ssh">https://github.com/settings/ssh</a> 的 <code>new SSH key</code> 中</p><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><p><code>git init</code></p><h3 id="查看仓库状态"><a href="#查看仓库状态" class="headerlink" title="查看仓库状态"></a>查看仓库状态</h3><p><code>git status</code></p><h3 id="向暂存区中添加文件"><a href="#向暂存区中添加文件" class="headerlink" title="向暂存区中添加文件"></a>向暂存区中添加文件</h3><p><code>git add NAME.xx</code></p><h3 id="保存仓库的历史记录"><a href="#保存仓库的历史记录" class="headerlink" title="保存仓库的历史记录"></a>保存仓库的历史记录</h3><p><code>git commit</code></p><h4 id="记述一行提交信息"><a href="#记述一行提交信息" class="headerlink" title="记述一行提交信息"></a>记述一行提交信息</h4><pre class="language-none"><code class="language-none">git commit -m &quot;First name&quot;</code></pre><p>-m 参数后的“First name”称作提交信息，是对这个提交的概述。</p><h4 id="记述详细提交信息"><a href="#记述详细提交信息" class="headerlink" title="记述详细提交信息"></a>记述详细提交信息</h4><p>直接执行<code>git commit</code>命令</p><p>在编辑器中记述提交信息的格式如下</p><ul><li>第一行：用一行文字简述提交的更改内容</li><li>第二行：空行</li><li>第三行以后：记述更改的原因和详细内容</li></ul><p>只要按照上面的格式熟入，今后便可以通过确认日志的命令或工具看到这些记录。</p><h3 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h3><p><code>git log</code></p><h4 id="只显示提交信息第一行-git-log-pretty-short"><a href="#只显示提交信息第一行-git-log-pretty-short" class="headerlink" title="只显示提交信息第一行-git log --pretty=short"></a>只显示提交信息第一行-<code>git log --pretty=short</code></h4><h4 id="只显示指定目录、文件的日志-git-log-NAME"><a href="#只显示指定目录、文件的日志-git-log-NAME" class="headerlink" title="只显示指定目录、文件的日志-git log NAME"></a>只显示指定目录、文件的日志-<code>git log NAME</code></h4><h4 id="显示文件的改动-git-log-p-git-log-p-NAME"><a href="#显示文件的改动-git-log-p-git-log-p-NAME" class="headerlink" title="显示文件的改动-git log -p git log -p NAME"></a>显示文件的改动-<code>git log -p</code> <code>git log -p NAME</code></h4><h3 id="查看更改前后差别"><a href="#查看更改前后差别" class="headerlink" title="查看更改前后差别"></a>查看更改前后差别</h3><p><code>git diff</code></p><h2 id="分支的操作"><a href="#分支的操作" class="headerlink" title="分支的操作"></a>分支的操作</h2><h3 id="显示分支一览表"><a href="#显示分支一览表" class="headerlink" title="显示分支一览表"></a>显示分支一览表</h3><p><code>git branch</code></p><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p><code>git branch &lt;分支名&gt;</code></p><h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><p><code>git checkout &lt;分支名&gt;</code></p><p>可使用以下命令直接<strong>创建并切换</strong>分支</p><p><code>git checkout -b &lt;分支名&gt;</code></p><h3 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h3><p>该命令使&lt;分支名&gt;合并至当前所在分支</p><p><code>git merge &lt;分支名&gt;</code></p><p>例如将master分支合并到bugfix</p><pre class="language-shell" data-language="shell"><code class="language-shell">git checkout bugfixgit merge master</code></pre><h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>Git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>查看操作系统类型大小</title>
     <link href="/posts/68d86f1e.html"/>
     <url>/posts/68d86f1e.html</url>
